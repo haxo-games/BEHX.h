@@ -19,20 +19,25 @@
 #include <typeinfo>
 #include <string>
 
-template <typename T> void print(T elem) 
+template <typename T, typename... Args> void print(T elem, Args... args) 
 {
     std::cout << elem;
+    (std::cout << ... << args);
 }
 
-
-template <typename T> void print(T elem, char separator) 
+template <typename T> T input() 
 {
-    std::cout << elem << separator;
+    T value;
+    std::cin >> value;
+    return value;
 }
 
-template <typename T> void print(T elem, const std::string& separator) 
+template <typename T> T input(const std::string& prompt) 
 {
-    std::cout << elem << separator;
+    T value;
+    std::cout << prompt;
+    std::cin >> value;
+    return value;
 }
 
 template <typename T> long long findMinimumSize() 
