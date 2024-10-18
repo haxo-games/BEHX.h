@@ -5,6 +5,7 @@
 # Prerequisites
 *.d
 *.json
+*.cpp
 
 # Compiled Object files
 *.slo
